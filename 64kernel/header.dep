@@ -1,0 +1,22 @@
+isr.o: isr.cc isr.h types.h pic.h keyboard.h queue.h console.h \
+ scheduler.h list.h task.h flags.h
+pit.o: pit.cc pit.h types.h ioport.h
+shell.o: shell.cc shell.h types.h console.h list.h keyboard.h queue.h \
+ string.h time.h task.h scheduler.h flags.h stdlib.h
+scheduler.o: scheduler.cc scheduler.h types.h list.h task.h flags.h \
+ string.h memmap.h pit.h
+descriptor.o: descriptor.cc descriptor.h types.h string.h
+stdio.o: stdio.cc stdio.h stdlib.h types.h string.h
+memmap.o: memmap.cc memmap.h types.h
+main.o: main.cc types.h keyboard.h queue.h descriptor.h isr.h pic.h pit.h \
+ flags.h console.h shell.h list.h time.h scheduler.h task.h memmap.h
+string.o: string.cc string.h types.h ctype.h
+ioport.o: ioport.cc ioport.h types.h
+keyboard.o: keyboard.cc keyboard.h types.h queue.h ioport.h flags.h
+console.o: console.cc console.h types.h string.h stdio.h ioport.h \
+ keyboard.h queue.h
+mutex.o: mutex.cc mutex.h types.h scheduler.h list.h task.h flags.h
+stdlib.o: stdlib.cc stdlib.h types.h ctype.h string.h
+task.o: task.cc task.h types.h list.h scheduler.h flags.h
+time.o: time.cc time.h types.h ioport.h
+pic.o: pic.cc pic.h types.h ioport.h

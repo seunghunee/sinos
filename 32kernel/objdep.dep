@@ -1,0 +1,2 @@
+main.o: main.cc page.h
+page.o: page.cc page.h
